@@ -1,6 +1,6 @@
 ---
 layout: post
-title: İlk Yazım
+title: Üçüncü Yazım
 ---
 
 Merhaba! Bu benim ilk test yazım.
