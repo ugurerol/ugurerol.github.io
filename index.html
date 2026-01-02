@@ -1,20 +1,25 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Markdown Tek Sayfa Blog</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Yazılar</h2>
+      <ul id="sidebar-list">
+        <!-- Sidebar JS ile dolacak -->
+      </ul>
+    </aside>
 
-<aside class="sidebar">
-  <h2>Yazılar</h2>
-  <ul>
-    {% for post in site.posts %}
-      <li><a href="#" data-id="{{ post.id }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-</aside>
+    <main class="content" id="content">
+      <p>Yazı seçiniz...</p>
+    </main>
+  </div>
 
-<main class="content">
-  {% for post in site.posts %}
-    {% include post.html post=post %}
-  {% endfor %}
-</main>
-
-<script src="assets/js/script.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
