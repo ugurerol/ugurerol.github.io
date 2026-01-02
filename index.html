@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<aside class="sidebar">
+  <h2>Yazılar</h2>
+  <ul>
+    {% for post in site.posts %}
+      <li><a href="#" data-id="{{ post.id }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</aside>
+
+<main class="content">
+  {% for post in site.posts %}
+    {% include post.html post=post %}
+  {% endfor %}
+</main>
+
+<script src="assets/js/script.js"></script>
