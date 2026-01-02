@@ -7,21 +7,30 @@ const sidebar = document.getElementById('sidebar-list');
 const content = document.getElementById('content');
 
 // Sidebar linklerini oluştur
-posts.forEach((post, index) => {
+posts.forEach(post => {
   const li = document.createElement('li');
   const a = document.createElement('a');
   a.href = '#';
   a.textContent = post.title;
+
+  // hangi Markdown dosyasını çekeceğini JS’e bildir
+  a.dataset.file = post.file;
+
   a.addEventListener('click', function(e) {
     e.preventDefault();
-    fetch(post.file)
+    fetch(this.dataset.file)
       .then(res => res.text())
       .then(md => {
-        // Front matter temizle
+        // front matter varsa temizle
         const html = marked(md.replace(/---[\s\S]*?---/, ''));
         content.innerHTML = html;
+      })
+      .catch(err => {
+        content.innerHTML = "<p>Yazı yüklenemedi.</p>";
+        console.error(err);
       });
   });
+
   li.appendChild(a);
   sidebar.appendChild(li);
 });
