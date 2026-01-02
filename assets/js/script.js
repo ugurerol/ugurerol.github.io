@@ -6,14 +6,11 @@ const posts = [
 const sidebar = document.getElementById('sidebar-list');
 const content = document.getElementById('content');
 
-// Sidebar linklerini oluştur
 posts.forEach(post => {
   const li = document.createElement('li');
   const a = document.createElement('a');
   a.href = '#';
   a.textContent = post.title;
-
-  // hangi Markdown dosyasını çekeceğini JS’e bildir
   a.dataset.file = post.file;
 
   a.addEventListener('click', function(e) {
@@ -21,7 +18,6 @@ posts.forEach(post => {
     fetch(this.dataset.file)
       .then(res => res.text())
       .then(md => {
-        // front matter varsa temizle
         const html = marked(md.replace(/---[\s\S]*?---/, ''));
         content.innerHTML = html;
       })
