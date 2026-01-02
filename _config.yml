@@ -3,6 +3,7 @@ description:
 
 navigation:
   - name: Ana Sayfa
-    link: index.md
+    link: /
   # - name: Hakkımda
-  #   link: about.md
+  #   link: /about/
+
