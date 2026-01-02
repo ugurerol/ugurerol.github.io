@@ -1,0 +1,8 @@
+title: Ugur Erol
+description: Çok sade GitHub Pages sitesi
+
+navigation:
+  - name: Ana Sayfa
+    link: index.md
+  - name: Hakkımda
+    link: about.md
