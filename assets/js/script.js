@@ -1,4 +1,4 @@
-// _posts klasöründeki yazıları listele
+// posts klasöründeki yazılar
 const posts = [
   { file: 'posts/2026-01-02-ilk-yazi.md', title: 'İlk Yazım' },
   { file: 'posts/2026-01-02-ikinci-yazi.md', title: 'İkinci Yazım' }
