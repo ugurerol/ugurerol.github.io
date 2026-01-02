@@ -1,10 +1,17 @@
 body { font-family: Arial, sans-serif; margin:0; padding:0; }
 .container { display: flex; min-height: 100vh; }
+
 .sidebar { width: 200px; background: #f0f0f0; padding: 20px; }
-.content { flex: 1; padding: 20px; }
 .sidebar ul { list-style: none; padding: 0; }
 .sidebar li { margin-bottom: 10px; }
 .sidebar a { text-decoration: none; color: #333; }
 .sidebar a:hover { text-decoration: underline; }
+
+/* Ana Sayfa kalın */
+.sidebar .home-link a {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.content { flex: 1; padding: 20px; }
 .content img { max-width: 100%; height: auto; margin: 10px 0; }
-.date { display: none; }
