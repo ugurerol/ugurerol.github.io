@@ -7,4 +7,4 @@ title: Ana Sayfa
 
 Test
 
-![Doğa Resmi](assets/images/doga.jpg) 
+![Doğa Resmi](assets/images/img_ugurerol.png) 
