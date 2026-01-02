@@ -1,33 +1,28 @@
-// posts klasöründeki yazılar
 const posts = [
-  { file: 'ugurerol.github.io/posts/2026-01-02-ilk-yazi.md', title: 'İlk Yazım' },
-  { file: 'posts/2026-01-02-ikinci-yazi.md', title: 'İkinci Yazım' }
+  { title: "İlk Yazım", content: `
+Merhaba! Bu benim ilk test yazım.
+
+![Test Resmi](assets/images/test.jpg)
+  ` },
+  { title: "İkinci Yazım", content: `
+Bu da ikinci test yazısı.
+
+![Başka Resim](assets/images/test2.jpg)
+  ` }
 ];
 
 const sidebar = document.getElementById('sidebar-list');
 const content = document.getElementById('content');
 
-// Sidebar linklerini oluştur
-posts.forEach(post => {
+posts.forEach((post, i) => {
   const li = document.createElement('li');
   const a = document.createElement('a');
-  a.href = '#';
+  a.href = "#";
   a.textContent = post.title;
-  a.dataset.file = post.file;
 
   a.addEventListener('click', function(e) {
     e.preventDefault();
-    fetch(this.dataset.file)
-      .then(res => res.text())
-      .then(md => {
-        // front matter temizle
-        const html = marked(md.replace(/---[\s\S]*?---/, ''));
-        content.innerHTML = html;
-      })
-      .catch(err => {
-        content.innerHTML = "<p>Yazı yüklenemedi.</p>";
-        console.error(err);
-      });
+    content.innerHTML = marked(post.content);
   });
 
   li.appendChild(a);
