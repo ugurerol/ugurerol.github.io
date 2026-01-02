@@ -3,12 +3,8 @@ layout: default
 title: Ana Sayfa
 ---
 
-# Hoşgeldiniz
+# Ugur EROL
 
-Bu çok sade bir site örneğidir.  
+Test
 
-Aşağıda örnek bir resim bulunuyor:
-
-![Doğa Resmi](assets/images/doga.jpg)
-
-Buraya istediğiniz kadar yazı ve resim ekleyebilirsiniz.
+![Doğa Resmi](assets/images/doga.jpg) 
