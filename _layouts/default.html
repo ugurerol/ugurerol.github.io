@@ -1,23 +1,22 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8">
-  <title>{{ page.title }} | {{ site.title }}</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-  <div class="container">
-    <aside class="sidebar">
-      <h2>Yazılar</h2>
-        <ul>
-          {% for post in site.posts %}
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-          {% endfor %}
-        </ul>
-    </aside>
-    <main class="content">
-      {{ content }}
-    </main>
+<aside class="sidebar">
+  <ul>
+    <li><a href="#" data-post="yazi1">İlk Yazım</a></li>
+    <li><a href="#" data-post="yazi2">İkinci Yazım</a></li>
+  </ul>
+</aside>
+
+<main class="content">
+  <div id="yazi1" class="post">
+    <h1>İlk Yazım</h1>
+    <p>Merhaba! Bu benim ilk test yazım.</p>
+    <img src="assets/images/test.jpg" />
   </div>
-</body>
-</html>
+
+  <div id="yazi2" class="post" style="display:none;">
+    <h1>İkinci Yazım</h1>
+    <p>Bu da ikinci test yazısı.</p>
+    <img src="assets/images/test2.jpg" />
+  </div>
+</main>
+
+<script src="assets/js/script.js"></script>
