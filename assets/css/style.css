@@ -36,3 +36,35 @@ body { font-family: Arial, sans-serif; margin:0; padding:0; }
 .sidebar .category-posts li {
   margin-bottom: 6px;
 }
+
+/* Kategori başlığı */
+.category-title {
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+/* Ok simgesi */
+.category-title .arrow {
+  font-size: 0.8em;
+  transition: transform 0.2s ease;
+}
+
+/* Alt post listesi (kapalı) */
+.category-posts {
+  display: none;
+  padding-left: 15px;
+  margin-top: 5px;
+}
+
+/* Açık kategori */
+.category.open .category-posts {
+  display: block;
+}
+
+.category.open .arrow {
+  transform: rotate(90deg);
+}

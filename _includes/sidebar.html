@@ -9,7 +9,11 @@
     {% assign categories = site.categories | sort %}
     {% for category in categories %}
       <li class="category">
-        <strong>{{ category[0] | capitalize }}</strong>
+        <div class="category-title" onclick="toggleCategory(this)">
+          {{ category[0] | capitalize }}
+          <span class="arrow">▸</span>
+        </div>
+
         <ul class="category-posts">
           {% for post in category[1] %}
             <li>
