@@ -1,6 +1,7 @@
 <aside class="sidebar">
   <ul>
 
+    <!-- Ana Sayfa -->
     <li class="home-link">
       <a href="{{ '/' | relative_url }}">Ana Sayfa</a>
     </li>
@@ -9,8 +10,10 @@
     {% for category in categories %}
 
       {% assign is_open = false %}
+      {% assign active_post_url = page.url %}
+
       {% for post in category[1] %}
-        {% if post.url == page.url %}
+        {% if post.url == active_post_url %}
           {% assign is_open = true %}
         {% endif %}
       {% endfor %}
@@ -24,7 +27,8 @@
         <ul class="category-posts">
           {% for post in category[1] %}
             <li>
-              <a href="{{ post.url | relative_url }}">
+              <a href="{{ post.url | relative_url }}"
+                 class="{% if post.url == active_post_url %}active-post{% endif %}">
                 {{ post.title }}
               </a>
             </li>
