@@ -1,5 +1,6 @@
 <aside class="sidebar">
   <ul>
+    <!-- Ana Sayfa -->
     <li class="home-link">
       <a href="{{ '/' | relative_url }}">Ana Sayfa</a>
     </li>
@@ -8,7 +9,9 @@
     {% for category in categories %}
       <li class="category">
         <div class="category-title">
-          <span class="category-name">{{ category[0] | capitalize }}</span>
+          <span class="category-name">
+            {{ category[0] | capitalize }}
+          </span>
           <span class="arrow">▸</span>
         </div>
 
@@ -16,7 +19,7 @@
           {% for post in category[1] %}
             <li>
               <a href="{{ post.url | relative_url }}"
-                 class="{% if page.url == post.url %}active-post{% endif %}">
+                 class="{% if page.id == post.id %}active-post{% endif %}">
                 {{ post.title }}
               </a>
             </li>
