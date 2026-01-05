@@ -8,7 +8,7 @@
     {% for category in categories %}
       <li class="category">
         <div class="category-title">
-          {{ category[0] | capitalize }}
+          <span class="category-name">{{ category[0] | capitalize }}</span>
           <span class="arrow">▸</span>
         </div>
 
@@ -17,7 +17,7 @@
             <li>
               <a href="{{ post.url | relative_url }}"
                  class="{% if page.url == post.url %}active-post{% endif %}">
-                 {{ post.title }}
+                {{ post.title }}
               </a>
             </li>
           {% endfor %}

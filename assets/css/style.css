@@ -39,34 +39,32 @@ body { font-family: Arial, sans-serif; margin:0; padding:0; }
 
 .category-title {
   cursor: pointer;
-  font-weight: bold;
-  margin-top: 12px;
-  display: flex;
-  justify-content: space-between;
+  display: inline-flex;
   align-items: center;
+  gap: 6px;
+  font-weight: normal;
+  margin-top: 8px;
+}
+
+.category-title .arrow {
+  font-size: 0.75em;
+  transition: transform 0.2s ease;
 }
 
 .category-posts {
   display: none;
-  padding-left: 15px;
-  margin-top: 5px;
+  padding-left: 18px;
+  margin-top: 4px;
 }
 
 .category.open .category-posts {
   display: block;
 }
 
-.category .arrow {
-  font-size: 0.8em;
-  transition: transform 0.2s ease;
-}
-
 .category.open .arrow {
   transform: rotate(90deg);
 }
 
-/* Aktif post */
 .active-post {
   font-weight: bold;
-  text-decoration: underline;
 }
