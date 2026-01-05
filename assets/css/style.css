@@ -50,3 +50,8 @@
 .category-posts li {
   margin-bottom: 6px;
 }
+
+.active-post {
+  color: red;
+  font-weight: bold;
+}
