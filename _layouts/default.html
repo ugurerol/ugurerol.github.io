@@ -16,13 +16,14 @@
   <script>
   document.addEventListener("DOMContentLoaded", function () {
 
+    /* Kategori toggle */
     document.querySelectorAll(".category-title").forEach(function (title) {
       title.addEventListener("click", function () {
         this.parentElement.classList.toggle("open");
       });
     });
 
-    // Aktif post varsa kategorisini otomatik aç
+    /* Aktif post kategorisi açık */
     document.querySelectorAll(".active-post").forEach(function (link) {
       const category = link.closest(".category");
       if (category) {
@@ -30,7 +31,18 @@
       }
     });
 
+    /* Hamburger toggle */
+    const hamburger = document.getElementById("hamburgerBtn");
+    const sidebar = document.querySelector(".sidebar");
+
+    if (hamburger && sidebar) {
+      hamburger.addEventListener("click", function () {
+        sidebar.classList.toggle("open");
+      });
+    }
+
   });
   </script>
+  <button class="hamburger" id="hamburgerBtn">☰</button>
 </body>
 </html>
