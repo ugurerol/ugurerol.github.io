@@ -7,22 +7,34 @@
 
     {% for cat in site.category_order %}
       {% if site.categories[cat] %}
-        <li class="category">
-          <strong class="category-title">
+
+        {% assign is_open = false %}
+        {% for post in site.categories[cat] %}
+          {% if post.url == page.url %}
+            {% assign is_open = true %}
+          {% endif %}
+        {% endfor %}
+
+        <li class="category {% if is_open %}open{% endif %}">
+          
+          <div class="category-title"
+               onclick="this.parentElement.classList.toggle('open')">
             {{ cat | capitalize }}
-          </strong>
+          </div>
 
           <ul class="category-posts">
             {% for post in site.categories[cat] %}
               <li>
                 <a href="{{ post.url | relative_url }}"
-                   class="{% if page.url == post.url %}active-post{% endif %}">
+                   class="{% if post.url == page.url %}active-post{% endif %}">
                   {{ post.title }}
                 </a>
               </li>
             {% endfor %}
           </ul>
+
         </li>
+
       {% endif %}
     {% endfor %}
 
