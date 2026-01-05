@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Üçüncü Yazım
+categories: [Test]
 ---
 
 Merhaba! Bu benim ilk test yazım.

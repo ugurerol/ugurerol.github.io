@@ -19,3 +19,20 @@ body { font-family: Arial, sans-serif; margin:0; padding:0; }
 .date {
   display: none;
 }
+
+.sidebar .category {
+  margin-top: 15px;
+}
+
+.sidebar .category strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.sidebar .category-posts {
+  padding-left: 15px;
+}
+
+.sidebar .category-posts li {
+  margin-bottom: 6px;
+}

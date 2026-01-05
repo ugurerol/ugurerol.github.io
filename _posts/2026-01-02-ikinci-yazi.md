@@ -1,6 +1,7 @@
 ---
 layout: post
 title: İkinci Yazım
+categories: [Deneme]
 ---
 
 Bu da ikinci test yazısı.

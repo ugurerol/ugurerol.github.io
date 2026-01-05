@@ -1,11 +1,23 @@
 <aside class="sidebar">
   <ul>
-    <!-- Ana Sayfa linki -->
-    <li class="home-link"><a href="{{ '/' | relative_url }}">Ana Sayfa</a></li>
+    <!-- Ana Sayfa -->
+    <li class="home-link">
+      <a href="{{ '/' | relative_url }}">Ana Sayfa</a>
+    </li>
 
-    <!-- Blog yazıları -->
-    {% for post in site.posts %}
-      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    <!-- Kategoriler -->
+    {% assign categories = site.categories | sort %}
+    {% for category in categories %}
+      <li class="category">
+        <strong>{{ category[0] | capitalize }}</strong>
+        <ul class="category-posts">
+          {% for post in category[1] %}
+            <li>
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
     {% endfor %}
   </ul>
 </aside>
