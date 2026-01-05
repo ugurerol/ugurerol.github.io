@@ -16,13 +16,12 @@
   margin: 0;
 }
 
-
 .content {
   flex: 1;
   padding: 20px;
 }
 
-/* Ana Sayfa bold */
+/* Ana Sayfa */
 .home-link a {
   font-weight: bold;
 }
@@ -51,8 +50,19 @@
   margin-bottom: 6px;
 }
 
-.sidebar a.active-post,
-.sidebar a.active-post:visited {
+/* linkler */
+.sidebar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidebar a:hover,
+.sidebar a:focus {
+  text-decoration: none;
+}
+
+/* aktif post */
+.sidebar a.active-post {
   color: red;
   font-weight: bold;
 }
