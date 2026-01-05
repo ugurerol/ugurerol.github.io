@@ -1,18 +1,17 @@
-/* ===== GENEL ===== */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
+/* layout */
 .container {
   display: flex;
   min-height: 100vh;
 }
 
-/* ===== SIDEBAR (MASAÜSTÜ) ===== */
+/* sidebar */
 .sidebar {
-  width: 200px;
+  width: 220px;
   background: #f0f0f0;
   padding: 20px;
 }
@@ -22,62 +21,32 @@ body {
   padding: 0;
 }
 
-.sidebar li {
-  margin-bottom: 10px;
-}
-
 .sidebar a {
   text-decoration: none;
   color: #333;
 }
 
-.sidebar a:hover {
-  text-decoration: underline;
-}
-
-/* Ana Sayfa kalın */
-.sidebar .home-link a {
+.home-link a {
   font-weight: bold;
-  font-size: 1.1em;
 }
 
-/* ===== İÇERİK ===== */
-.content {
-  flex: 1;
-  padding: 20px;
-}
-
-.content img {
-  max-width: 100%;
-  height: auto;
-  margin: 10px 0;
-}
-
-.date {
-  display: none;
-}
-
-/* ===== KATEGORİ – AÇILIR / KAPANIR ===== */
-.category {
-  margin-top: 12px;
-}
-
+/* category */
 .category-title {
   cursor: pointer;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 6px;
+  margin-top: 10px;
 }
 
-.category-title .arrow {
-  font-size: 0.75em;
-  transition: transform 0.2s ease;
+.arrow {
+  font-size: 0.7em;
+  transition: transform 0.2s;
 }
 
 .category-posts {
   display: none;
-  padding-left: 18px;
-  margin-top: 4px;
+  padding-left: 15px;
 }
 
 .category.open .category-posts {
@@ -88,48 +57,51 @@ body {
   transform: rotate(90deg);
 }
 
+/* active post */
 .active-post {
   font-weight: bold;
 }
 
-/* ===== HAMBURGER BUTON ===== */
-.hamburger {
-  display: none;
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  font-size: 26px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 3000;
+/* content */
+.content {
+  flex: 1;
+  padding: 20px;
 }
 
-/* ===== MOBİL DAVRANIŞ ===== */
-@media (max-width: 768px) {
+/* hamburger */
+.hamburger {
+  display: none;
+}
 
-  .container {
-    display: block;
-  }
+/* mobile */
+@media (max-width: 768px) {
 
   .hamburger {
     display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 26px;
+    background: none;
+    border: none;
+    z-index: 3000;
   }
 
   .sidebar {
     position: fixed;
     top: 0;
     left: -260px;
-    width: 240px;
     height: 100vh;
-    background: #f0f0f0;
-    padding: 20px;
-    transition: left 0.3s ease;
+    transition: left 0.3s;
     z-index: 2000;
   }
 
   .sidebar.open {
     left: 0;
+  }
+
+  .container {
+    display: block;
   }
 
   .content {
