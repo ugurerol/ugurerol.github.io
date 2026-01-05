@@ -2,26 +2,10 @@
   margin-top: 15px;
 }
 
-.sidebar .category strong {
+.sidebar .category-title {
   display: block;
   margin-bottom: 5px;
-}
-
-.sidebar .category-posts {
-  padding-left: 15px;
-}
-
-.sidebar .category-posts li {
-  margin-bottom: 6px;
-}
-
-.sidebar .category {
-  margin-top: 15px;
-}
-
-.sidebar .category strong {
-  display: block;
-  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .sidebar .category-posts {
