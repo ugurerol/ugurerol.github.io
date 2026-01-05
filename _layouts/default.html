@@ -14,10 +14,23 @@
     </main>
   </div>
   <script>
-    function toggleCategory(element) {
-      const category = element.parentElement;
-      category.classList.toggle("open");
-    }
+  document.addEventListener("DOMContentLoaded", function () {
+
+    document.querySelectorAll(".category-title").forEach(function (title) {
+      title.addEventListener("click", function () {
+        this.parentElement.classList.toggle("open");
+      });
+    });
+
+    // Aktif post varsa kategorisini otomatik aç
+    document.querySelectorAll(".active-post").forEach(function (link) {
+      const category = link.closest(".category");
+      if (category) {
+        category.classList.add("open");
+      }
+    });
+
+  });
   </script>
 </body>
 </html>

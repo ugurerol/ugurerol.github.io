@@ -1,15 +1,13 @@
 <aside class="sidebar">
   <ul>
-    <!-- Ana Sayfa -->
     <li class="home-link">
       <a href="{{ '/' | relative_url }}">Ana Sayfa</a>
     </li>
 
-    <!-- Kategoriler -->
     {% assign categories = site.categories | sort %}
     {% for category in categories %}
       <li class="category">
-        <div class="category-title" onclick="toggleCategory(this)">
+        <div class="category-title">
           {{ category[0] | capitalize }}
           <span class="arrow">▸</span>
         </div>
@@ -17,7 +15,10 @@
         <ul class="category-posts">
           {% for post in category[1] %}
             <li>
-              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              <a href="{{ post.url | relative_url }}"
+                 class="{% if page.url == post.url %}active-post{% endif %}">
+                 {{ post.title }}
+              </a>
             </li>
           {% endfor %}
         </ul>
