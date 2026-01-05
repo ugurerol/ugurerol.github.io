@@ -7,10 +7,17 @@
 
     {% assign categories = site.categories | sort %}
     {% for category in categories %}
-      <li class="category" data-category="{{ category[0] }}">
 
+      {% assign is_open = false %}
+      {% for post in category[1] %}
+        {% if post.url == page.url %}
+          {% assign is_open = true %}
+        {% endif %}
+      {% endfor %}
+
+      <li class="category {% if is_open %}open{% endif %}">
         <div class="category-title"
-             onclick="toggleCategory(this)">
+             onclick="this.parentElement.classList.toggle('open')">
           {{ category[0] | capitalize }}
         </div>
 
@@ -23,8 +30,8 @@
             </li>
           {% endfor %}
         </ul>
-
       </li>
+
     {% endfor %}
 
   </ul>
