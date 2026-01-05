@@ -1,8 +1,7 @@
 title: Not Defteri
 description: Sade ve minimal blog
 baseurl: "" # root
-url: "https://ugurerol.github.io"
-theme: minima
+url: "https://ugurerol.github.io" 
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
