@@ -1,6 +1,6 @@
 title: Not Defteri
 description: Sade ve minimal blog
-theme: null
+theme: minima
 baseurl: "" # root
 url: "https://ugurerol.github.io" 
 plugins:
