@@ -16,5 +16,30 @@
     </main>
   </div>
 
+  <script>
+  function toggleCategory(el) {
+    const category = el.parentElement;
+    const name = category.dataset.category;
+  
+    category.classList.toggle('open');
+  
+    if (category.classList.contains('open')) {
+      localStorage.setItem('openCategory', name);
+    } else {
+      localStorage.removeItem('openCategory');
+    }
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const openCategory = localStorage.getItem('openCategory');
+    if (!openCategory) return;
+  
+    const el = document.querySelector(
+      `.category[data-category="${openCategory}"]`
+    );
+    if (el) el.classList.add('open');
+  });
+  </script>
+
 </body>
 </html>
