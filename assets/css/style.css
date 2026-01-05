@@ -51,7 +51,8 @@
   margin-bottom: 6px;
 }
 
-.active-post {
+.sidebar a.active-post,
+.sidebar a.active-post:visited {
   color: red;
   font-weight: bold;
 }
