@@ -109,3 +109,30 @@ body { font-family: Arial, sans-serif; margin:0; padding:0; }
     padding-top: 60px;
   }
 }
+
+@media (max-width: 768px) {
+
+  .container {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 240px;
+    height: 100vh;
+    background: #f0f0f0;
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 2000;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .content {
+    padding-top: 60px;
+  }
+}
