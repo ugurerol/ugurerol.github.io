@@ -1,3 +1,21 @@
+/* layout */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  background: #f0f0f0;
+  padding: 20px;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* categories */
 .sidebar .category {
   margin-top: 15px;
 }
