@@ -105,3 +105,17 @@
 .category-title:hover::before {
   background: #999;
 }
+
+.home-link a {
+  display: block;
+  padding: 8px 10px;
+  background-color: #e6f0ff;
+  color: #0066cc;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.home-link a:hover {
+  background-color: #cce0ff;
+  color: #004c99;
+}
