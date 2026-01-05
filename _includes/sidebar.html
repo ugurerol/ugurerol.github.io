@@ -1,6 +1,7 @@
 <aside class="sidebar">
   <ul>
 
+    <!-- Ana Sayfa -->
     <li class="home-link">
       <a href="{{ '/' | relative_url }}">Ana Sayfa</a>
     </li>
@@ -8,9 +9,11 @@
     {% assign categories = site.categories | sort %}
     {% for category in categories %}
       <li class="category">
-        <strong class="category-title">
+
+        <div class="category-title"
+             onclick="this.parentElement.classList.toggle('open')">
           {{ category[0] | capitalize }}
-        </strong>
+        </div>
 
         <ul class="category-posts">
           {% for post in category[1] %}
@@ -21,6 +24,7 @@
             </li>
           {% endfor %}
         </ul>
+
       </li>
     {% endfor %}
 
