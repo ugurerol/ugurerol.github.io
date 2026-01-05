@@ -26,6 +26,15 @@
   font-weight: bold;
 }
 
+.home-link a {
+  color: #0066cc;
+  font-weight: bold;
+}
+
+.home-link a:hover {
+  color: #004c99;
+}
+
 /* categories */
 .category {
   margin-top: 15px;
