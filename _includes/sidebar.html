@@ -1,41 +1,29 @@
 <aside class="sidebar">
   <ul>
 
-    <!-- Ana Sayfa -->
     <li class="home-link">
       <a href="{{ '/' | relative_url }}">Ana Sayfa</a>
     </li>
 
-    {% assign categories = site.categories | sort %}
-    {% for category in categories %}
+    {% for cat in site.category_order %}
+      {% if site.categories[cat] %}
+        <li class="category">
+          <strong class="category-title">
+            {{ cat | capitalize }}
+          </strong>
 
-      {% assign is_open = false %}
-      {% assign active_post_url = page.url %}
-
-      {% for post in category[1] %}
-        {% if post.url == active_post_url %}
-          {% assign is_open = true %}
-        {% endif %}
-      {% endfor %}
-
-      <li class="category {% if is_open %}open{% endif %}">
-        <div class="category-title"
-             onclick="this.parentElement.classList.toggle('open')">
-          {{ category[0] | capitalize }}
-        </div>
-
-        <ul class="category-posts">
-          {% for post in category[1] %}
-            <li>
-              <a href="{{ post.url | relative_url }}"
-                 class="{% if post.url == active_post_url %}active-post{% endif %}">
-                {{ post.title }}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </li>
-
+          <ul class="category-posts">
+            {% for post in site.categories[cat] %}
+              <li>
+                <a href="{{ post.url | relative_url }}"
+                   class="{% if page.url == post.url %}active-post{% endif %}">
+                  {{ post.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endif %}
     {% endfor %}
 
   </ul>

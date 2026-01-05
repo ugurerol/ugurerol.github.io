@@ -6,3 +6,6 @@ url: "https://ugurerol.github.io"
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+category_order:
+  - Test
+  - Deneme
